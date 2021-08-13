@@ -1,0 +1,43 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/classes">Classes</a></li>
+    <li class="breadcrumb-item active" aria-current="page">View Class</li>
+  </ol>
+</nav>
+{{!-- {{#each rows}}
+  <div>{{this.first_name}} {{this.last_name}} {{this.class_id}}</div>
+{{/each}} --}}
+
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Όνομα</th>
+      <th scope="col">Επίθετο</th>
+      
+       <th scope="col" class="text-center">Επιλογές</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each rows}}
+      <tr>
+        
+        <td>{{this.first_name}}</td>
+        <td>{{this.last_name}}</td>
+       
+        </td>
+        <td class="d-flex justify-content-center">
+     
+          <a
+            href="/classes/{{this.class_id}}"
+            type="button"
+            class="btn btn-light btn-small"
+          ><i class="bi bi-person-x"></i>
+            Remove</a>
+        </td>
+      </tr>
+    {{/each}}
+
+  </tbody>
+</table>

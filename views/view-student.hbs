@@ -1,0 +1,53 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">View Student</li>
+  </ol>
+</nav>
+
+<div class="view-user p-5">
+
+  {{#each rows}}
+    <div class="row mb-5">
+      <div class="col text-center">
+        <h3>{{this.first_name}} {{this.last_name}}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Όνομα</th>
+              <th scope="col">Επίθετο</th>
+              <th scope="col">Κινητό</th>
+              <th scope="col">Τηλ. Οικογένειας</th>
+              <th scope="col">Πληρωμή</th>
+              <th scope="col">Τμήμα</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{this.first_name}}</th>
+              <td>{{this.last_name}}</td>
+              <td>{{this.phone}}</td>
+              <td>{{this.parent_phone}}</td>
+              <td>{{this.payment_status}}</td>
+              <td>{{this.class_id}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row">
+        <div class="col">
+          <b>Comments</b>
+        </div>
+        <div class="row">
+          <div class="col">
+            {{this.comments}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
